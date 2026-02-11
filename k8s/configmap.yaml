@@ -47,7 +47,7 @@ data:
     </head>
     <body>
       <div class="card">
-        <h1>Hello from Argo CD Version 2</h1>
+        <h1>Hello from Argo CD Version 3</h1>
         <p>แอปตัวอย่างนี้รันด้วย Nginx บน Kubernetes</p>
         <span class="badge">nginx + k8s</span>
       </div>
