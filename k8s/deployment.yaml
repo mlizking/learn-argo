@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: app
-          image: your-dockerhub-username/argo-learn:latest
+          image: mlizking/argo-learn:0f93e2d756383a9af5a28623dc40a6b90313c4bf
           ports:
             - containerPort: 80
