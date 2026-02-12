@@ -1,0 +1,26 @@
+# Task (taskfile.dev) - รัน build/validate แบบ local
+# ติดตั้ง: choco install task / scoop install task / npm i -g @go-task/cli
+version: "3"
+
+vars:
+  IMAGE_NAME: argo-learn
+  # เปลี่ยนเป็น Docker Hub username ของคุณเมื่อรัน local
+  DOCKER_USER: your-dockerhub-username
+
+tasks:
+  build:
+    desc: Build Docker image (tag local)
+    cmds:
+      - docker build -t {{.DOCKER_USER}}/{{.IMAGE_NAME}}:local .
+
+  validate:
+    desc: ตรวจสอบ manifest Kubernetes (ต้องมี kubectl หรือ kubeconform)
+    cmds:
+      - kubectl apply --dry-run=client -f k8s/
+
+  ci:
+    desc: รัน validate แบบเดียวกับ CI
+    deps:
+      - validate
+    cmds:
+      - echo "CI checks passed."

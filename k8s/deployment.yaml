@@ -16,15 +16,7 @@ spec:
         app: sample-app
     spec:
       containers:
-        - name: nginx
-          image: nginx:alpine
+        - name: app
+          image: your-dockerhub-username/argo-learn:latest
           ports:
             - containerPort: 80
-          volumeMounts:
-            - name: html
-              mountPath: /usr/share/nginx/html
-              readOnly: true
-      volumes:
-        - name: html
-          configMap:
-            name: sample-app-html

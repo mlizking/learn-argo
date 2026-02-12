@@ -1,0 +1,11 @@
+{
+  "name": "argo-learn",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/generate-configmap.js",
+    "validate:k8s": "kubeconform -summary -output text k8s/*.yaml 2>/dev/null || kubectl apply --dry-run=client -f k8s/",
+    "ci": "npm run build && npm run validate:k8s"
+  },
+  "description": "Argo CD sample app with build and CI"
+}
