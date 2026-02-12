@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: app
-          image: mlizking/argo-learn:41c8ae85a63047dba1f1ec9447f635bd96d9a506
+          image: mlizking/argo-learn:d51459965ebafe792b4a0e8a357bdbb014f78790
           ports:
             - containerPort: 80
